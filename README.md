@@ -1,2 +1,17 @@
-# MAS-backend
-Backend code for the marketing attribution system.
+# 营销归因系统后端程序
+
+## 项目说明
+    这个项目是本人参与22级哈工程软件工程华育实训的项目。</br>
+
+|||
+|--|--|
+|作者|罗晶|
+|作者学号|2022201714|
+|项目名称|MAS_backend|
+
+## 开发环境和相关工具
+- IntelliJ IDEA 2025.1.3 编译器
+- nacos 服务注册与配置中心
+- mysql 数据库
+- sql 数据库源文件
+- lombok
