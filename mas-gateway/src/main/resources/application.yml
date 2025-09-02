@@ -1,0 +1,47 @@
+## 已在nacos中配置
+#server:
+#  port: 10010
+#spring:
+#  cloud:
+#    gateway:
+#      # 是否和服务注册与发现组件结合，设置为 true 后可以直接使用应用名称调用服务
+#      discovery:
+#        locator:
+#          enabled: true
+#          lower-case-service-id: true
+#          # 服务名称转成小写
+#      routes:
+#        - id: mas-market-service
+#          uri: lb://mas-market-service
+#          predicates:  #断言工厂
+#            - Path=/market/**
+#            #按路径匹配
+#            #  - Query=name,jack #请求参数必须包含指定参数
+#            #  - Method=GET,POST #指定请求方式
+#            #Between 两个时间点之间
+#          #  - Between=2037-01-20T17:42:47.789-07:00[America/Denver], 2037-01-21T17:42:47.789-07:00[America/Denver]
+#          #  - Before=2031-04-13T15:14:47.433+08:00[Asia/Shanghai] #时间点之前容许进入
+#          #  - After=2037-01-20T17:42:47.789-07:00[America/Denver] #时间点之后容许进入 秒杀系统必备
+#        - id: mas-sso-service
+#          uri: lb://mas-sso-service
+#          predicates:
+#            - Path=/loginController/**
+#      # 跨域处理
+#      globalcors: # 全局的跨域处理
+#        add-to-simple-url-handler-mapping: true
+#        # 解决options请求被拦截问题
+#        corsConfigurations:
+#          '[/**]':
+#            allowedOriginPatterns: # 允许哪些网站的跨域请求
+#              - "*"
+#            allowedMethods: # 允许的跨域ajax的请求方式
+#              - "GET"
+#              - "POST"
+#              - "DELETE"
+#              - "PUT"
+#              - "OPTIONS"
+#            allowedHeaders: "*" # 允许在请求中携带的头信息
+#            allowCredentials: true
+#            # 是否允许携带cookie
+#            maxAge: 360000
+#            # 这次跨域检测的有效期
